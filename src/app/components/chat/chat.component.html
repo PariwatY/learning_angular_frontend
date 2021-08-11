@@ -1,1 +1,6 @@
-<p>chat works!</p>
+<h2>Global Chat</h2>
+
+<form [formGroup]="chatFormGroup" (ngSubmit) = "onSubmit()">
+    <input type="text" formControlName="message" placeholder="Messeage">
+    <input type="submit" value="Send" [disabled]="chatFormGroup.invalid">
+</form>
