@@ -1,6 +1,16 @@
 <h2>Global Chat</h2>
+<div>
+    Connected:{{isConnected}}
+</div>
 
 <form [formGroup]="chatFormGroup" (ngSubmit) = "onSubmit()">
     <input type="text" formControlName="message" placeholder="Messeage">
     <input type="submit" value="Send" [disabled]="chatFormGroup.invalid">
 </form>
+
+<h3>Message</h3>
+<u>
+    <li *ngFor="let message of messages">
+        {{message.from}}-{{message.message}}-{{message.created}}
+    </li>
+</u>
