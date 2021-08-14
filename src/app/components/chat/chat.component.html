@@ -5,7 +5,8 @@
 
 <form [formGroup]="chatFormGroup" (ngSubmit) = "onSubmit()">
     <input type="text" formControlName="message" placeholder="Messeage">
-    <input type="submit" value="Send" [disabled]="chatFormGroup.invalid">
+    <button type="submit" class="btn btn-primary" [disabled]="chatFormGroup.invalid">Send</button>
+ 
 </form>
 
 <h3>Message</h3>
