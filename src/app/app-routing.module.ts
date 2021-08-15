@@ -4,6 +4,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {  path:'login',
@@ -15,11 +16,13 @@ const routes: Routes = [
   component:RegisterComponent
   },
   {path:'dashboard',
-  component:DashboardComponent
+  component:DashboardComponent,
+  canActivate:[AuthGuardService]
   },
   {
     path:'chat',
-    component:ChatComponent
+    component:ChatComponent,
+    canActivate:[AuthGuardService]
   }
 
 
