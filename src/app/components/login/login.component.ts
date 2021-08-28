@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   
     this.userService.login(email,password).subscribe((response) =>{
       this.appCookieService.setAccessToken(response.token);
-      this.router.navigate(["/dashboard"]);
+      this.router.navigate(['/dashboard']);
     }, (error) =>{
       alert(error.error.error);
     });
